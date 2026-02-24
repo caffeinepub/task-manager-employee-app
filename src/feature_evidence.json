@@ -1,0 +1,211 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-secure-employee-authentication-system-with-email-and-password-login-using-internet-identity-integration-token-based-session-management-and-role-based-access-control-that-restricts-employees-to-their-designated-features",
+      "featureTitle": "Implement secure employee authentication system with email and password login using Internet Identity integration, token-based session management, and role-based access control that restricts employees to their designated features",
+      "files": [
+        "frontend/src/components/auth/ProfileSetupModal.tsx",
+        "frontend/src/hooks/useGetCallerUserProfile.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-employee-dashboard-that-displays-summary-of-assigned-tasks-pending-tasks-count-notifications-list-and-current-work-status-overview-with-quick-navigation-to-all-main-modules",
+      "featureTitle": "Create employee dashboard that displays summary of assigned tasks, pending tasks count, notifications list, and current work status overview with quick navigation to all main modules",
+      "files": [
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-task-management-module-where-employees-can-view-their-assigned-task-list-see-detailed-task-information-update-task-status-between-pending-in-progress-completed-add-notes-or-comments-to-tasks-and-upload-related-images",
+      "featureTitle": "Build task management module where employees can view their assigned task list, see detailed task information, update task status between Pending/In Progress/Completed, add notes or comments to tasks, and upload related images",
+      "files": [
+        "frontend/src/pages/Tasks.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-time-tracking-system-with-clock-in-and-clock-out-functionality-that-records-timestamps-displays-daily-work-hour-summary-shows-weekly-time-overview-and-stores-all-time-logs-with-employee-association",
+      "featureTitle": "Implement time tracking system with clock in and clock out functionality that records timestamps, displays daily work hour summary, shows weekly time overview, and stores all time logs with employee association",
+      "files": [
+        "frontend/src/pages/TimeClock.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-scheduling-module-that-displays-daily-schedule-view-weekly-schedule-overview-assigned-work-locations-and-upcoming-task-schedule-with-dynamic-data-fetching",
+      "featureTitle": "Create scheduling module that displays daily schedule view, weekly schedule overview, assigned work locations, and upcoming task schedule with dynamic data fetching",
+      "files": [
+        "frontend/src/pages/Schedule.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-messaging-and-notifications-system-that-allows-employees-to-receive-messages-from-managers-view-all-notifications-reply-to-messages-and-receive-task-related-alerts",
+      "featureTitle": "Build messaging and notifications system that allows employees to receive messages from managers, view all notifications, reply to messages, and receive task-related alerts",
+      "files": [
+        "frontend/src/pages/Messages.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-employee-onboarding-module-that-supports-submission-of-personal-information-uploading-of-required-forms-w-4-i-9-uploading-identification-documents-digital-signature-capture-and-onboarding-progress-tracking",
+      "featureTitle": "Implement employee onboarding module that supports submission of personal information, uploading of required forms (W-4, I-9), uploading identification documents, digital signature capture, and onboarding progress tracking",
+      "files": [
+        "frontend/src/pages/Onboarding.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-employee-profile-management-section-that-displays-employee-name-contact-details-job-title-company-assignment-and-role-while-explicitly-preventing-access-to-payroll-information",
+      "featureTitle": "Create employee profile management section that displays employee name, contact details, job title, company assignment, and role, while explicitly preventing access to payroll information",
+      "files": [
+        "frontend/src/pages/Profile.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-responsive-progressive-web-app-interface-optimized-for-mobile-browsers-with-structured-navigation-flow-including-login-screen-dashboard-and-main-navigation-tabs-for-tasks-time-clock-schedule-messages-and-profile",
+      "featureTitle": "Design responsive progressive web app interface optimized for mobile browsers with structured navigation flow including Login Screen, Dashboard, and main navigation tabs for Tasks, Time Clock, Schedule, Messages, and Profile",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/AppLayout.tsx",
+        "frontend/src/components/layout/Header.tsx",
+        "frontend/src/components/layout/MobileNavigation.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-modern-professional-design-system-throughout-the-application-with-a-cohesive-visual-theme-featuring-clean-typography-intuitive-layouts-and-a-color-palette-appropriate-for-enterprise-task-management-software-that-maintains-consistency-across-all-modules",
+      "featureTitle": "Apply a modern, professional design system throughout the application with a cohesive visual theme featuring clean typography, intuitive layouts, and a color palette appropriate for enterprise task management software that maintains consistency across all modules",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

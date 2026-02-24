@@ -1,0 +1,252 @@
+{
+  "kind": "build_request",
+  "title": "Build Employee Task Manager Web Application",
+  "projectName": "Employee Task Manager",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Implement secure employee authentication system with email and password login using Internet Identity integration, token-based session management, and role-based access control that restricts employees to their designated features",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Secure email and password login",
+          "Token-based authentication",
+          "Secure session handling"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Employees can log in securely with credentials",
+        "Sessions are maintained with secure tokens",
+        "Unauthorized access to restricted features is prevented"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create employee dashboard that displays summary of assigned tasks, pending tasks count, notifications list, and current work status overview with quick navigation to all main modules",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Summary of assigned tasks",
+          "Pending tasks",
+          "Notifications",
+          "Work status overview"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard shows task summary on load",
+        "Pending tasks are clearly counted and displayed",
+        "Notifications are visible and accessible",
+        "Quick links to main features work correctly"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Build task management module where employees can view their assigned task list, see detailed task information, update task status between Pending/In Progress/Completed, add notes or comments to tasks, and upload related images",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "View task list",
+          "View task details",
+          "Update task status (Pending, In Progress, Completed)",
+          "Add notes or comments",
+          "Upload related images"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Task list displays all assigned tasks for logged-in employee",
+        "Task detail view shows complete task information",
+        "Status can be changed between the three states",
+        "Notes can be added and saved to tasks",
+        "Images can be uploaded and associated with tasks"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement time tracking system with clock in and clock out functionality that records timestamps, displays daily work hour summary, shows weekly time overview, and stores all time logs with employee association",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Clock In functionality",
+          "Clock Out functionality",
+          "Daily work hour summary",
+          "Weekly time overview",
+          "Timestamp recording"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Employees can clock in to start work session",
+        "Employees can clock out to end work session",
+        "Daily hours are calculated and displayed accurately",
+        "Weekly time summary aggregates all work sessions",
+        "All timestamps are recorded with proper timezone handling"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Create scheduling module that displays daily schedule view, weekly schedule overview, assigned work locations, and upcoming task schedule with dynamic data fetching",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Daily schedule view",
+          "Weekly schedule overview",
+          "Assigned work locations",
+          "Upcoming task schedule"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Daily view shows current day's scheduled items",
+        "Weekly view displays full week schedule",
+        "Work locations are clearly indicated for each schedule item",
+        "Future scheduled tasks are visible and organized"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build messaging and notifications system that allows employees to receive messages from managers, view all notifications, reply to messages, and receive task-related alerts",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Receive messages",
+          "View notifications",
+          "Reply to messages",
+          "Task-related alerts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Employees can view received messages",
+        "Notification list shows all alerts and updates",
+        "Reply functionality works for two-way communication",
+        "Task alerts are triggered and displayed appropriately"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Implement employee onboarding module that supports submission of personal information, uploading of required forms (W-4, I-9), uploading identification documents, digital signature capture, and onboarding progress tracking",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Submit personal information",
+          "Upload required forms (W-4, I-9)",
+          "Upload identification documents",
+          "Provide digital signature",
+          "Track onboarding progress"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Personal information form can be filled and submitted",
+        "W-4 and I-9 forms can be uploaded",
+        "ID documents upload with validation",
+        "Digital signature can be captured and saved",
+        "Progress tracker shows completion status of onboarding steps"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Create employee profile management section that displays employee name, contact details, job title, company assignment, and role, while explicitly preventing access to payroll information",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Name",
+          "Contact details",
+          "Job title",
+          "Company assignment",
+          "Role",
+          "Payroll details remain restricted and inaccessible"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Profile displays all basic employee information",
+        "Contact details are visible and formatted correctly",
+        "Job title and company assignment are shown",
+        "Payroll data is not accessible or visible to employees"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Design responsive progressive web app interface optimized for mobile browsers with structured navigation flow including Login Screen, Dashboard, and main navigation tabs for Tasks, Time Clock, Schedule, Messages, and Profile",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "responsive web-based task manager that works great on mobile browsers",
+          "Login Screen",
+          "Dashboard",
+          "Main Navigation Tabs: Tasks, Time Clock, Schedule, Messages, Profile"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Application is fully responsive on mobile devices",
+        "Navigation structure follows the specified flow",
+        "All five main tabs are accessible from navigation",
+        "UI works seamlessly in mobile browsers",
+        "Touch interactions are optimized for mobile use"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Apply a modern, professional design system throughout the application with a cohesive visual theme featuring clean typography, intuitive layouts, and a color palette appropriate for enterprise task management software that maintains consistency across all modules",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visual design is professional and enterprise-appropriate",
+        "Typography is readable and consistent",
+        "Layout patterns are intuitive and user-friendly",
+        "Color scheme is cohesive across all screens",
+        "Design maintains consistency throughout all features"
+      ]
+    }
+  ],
+  "constraints": [
+    "Application must be built as a web application using React, not React Native",
+    "Backend must use Motoko on the Internet Computer, not localhost REST APIs",
+    "Authentication must integrate with Internet Identity, not traditional email/password",
+    "Employees must not have access to payroll information or system settings",
+    "Employees cannot view other employees' confidential information",
+    "Employees cannot assign tasks to others"
+  ],
+  "nonGoals": [
+    "Native mobile application development",
+    "Localhost backend configuration",
+    "Traditional REST API integration",
+    "Manager or admin functionality",
+    "Payroll management features",
+    "System settings configuration",
+    "Task assignment capabilities for employees",
+    "Biometric authentication"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

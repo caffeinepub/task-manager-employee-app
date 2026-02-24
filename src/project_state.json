@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Task Manager Employee Mobile App - Web-based progressive web app with employee login, task management, time tracking, scheduling, messaging, and profile management features. Responsive design for mobile browsers.",
+  "architectural_notes": [
+    "Web application built with React (not React Native) for responsive mobile browser experience",
+    "Role-based access control - employees restricted from payroll, system settings, and other employees' data",
+    "Navigation structure: Login → Dashboard → Main tabs (Tasks, Time Clock, Schedule, Messages, Profile)",
+    "Token-based authentication with secure session handling",
+    "Document upload capability for onboarding forms and identification"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-secure-employee-authentication-system-with-email-and-password-login-using-internet-identity-integration-token-based-session-management-and-role-based-access-control-that-restricts-employees-to-their-designated-features",
+      "title": "Implement secure employee authentication system with email and password login using Internet Identity integration, token-based session management, and role-based access control that restricts employees to their designated features",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-employee-dashboard-that-displays-summary-of-assigned-tasks-pending-tasks-count-notifications-list-and-current-work-status-overview-with-quick-navigation-to-all-main-modules",
+      "title": "Create employee dashboard that displays summary of assigned tasks, pending tasks count, notifications list, and current work status overview with quick navigation to all main modules",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-task-management-module-where-employees-can-view-their-assigned-task-list-see-detailed-task-information-update-task-status-between-pending-in-progress-completed-add-notes-or-comments-to-tasks-and-upload-related-images",
+      "title": "Build task management module where employees can view their assigned task list, see detailed task information, update task status between Pending/In Progress/Completed, add notes or comments to tasks, and upload related images",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-time-tracking-system-with-clock-in-and-clock-out-functionality-that-records-timestamps-displays-daily-work-hour-summary-shows-weekly-time-overview-and-stores-all-time-logs-with-employee-association",
+      "title": "Implement time tracking system with clock in and clock out functionality that records timestamps, displays daily work hour summary, shows weekly time overview, and stores all time logs with employee association",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-scheduling-module-that-displays-daily-schedule-view-weekly-schedule-overview-assigned-work-locations-and-upcoming-task-schedule-with-dynamic-data-fetching",
+      "title": "Create scheduling module that displays daily schedule view, weekly schedule overview, assigned work locations, and upcoming task schedule with dynamic data fetching",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-messaging-and-notifications-system-that-allows-employees-to-receive-messages-from-managers-view-all-notifications-reply-to-messages-and-receive-task-related-alerts",
+      "title": "Build messaging and notifications system that allows employees to receive messages from managers, view all notifications, reply to messages, and receive task-related alerts",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-employee-onboarding-module-that-supports-submission-of-personal-information-uploading-of-required-forms-w-4-i-9-uploading-identification-documents-digital-signature-capture-and-onboarding-progress-tracking",
+      "title": "Implement employee onboarding module that supports submission of personal information, uploading of required forms (W-4, I-9), uploading identification documents, digital signature capture, and onboarding progress tracking",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-employee-profile-management-section-that-displays-employee-name-contact-details-job-title-company-assignment-and-role-while-explicitly-preventing-access-to-payroll-information",
+      "title": "Create employee profile management section that displays employee name, contact details, job title, company assignment, and role, while explicitly preventing access to payroll information",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-responsive-progressive-web-app-interface-optimized-for-mobile-browsers-with-structured-navigation-flow-including-login-screen-dashboard-and-main-navigation-tabs-for-tasks-time-clock-schedule-messages-and-profile",
+      "title": "Design responsive progressive web app interface optimized for mobile browsers with structured navigation flow including Login Screen, Dashboard, and main navigation tabs for Tasks, Time Clock, Schedule, Messages, and Profile",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-modern-professional-design-system-throughout-the-application-with-a-cohesive-visual-theme-featuring-clean-typography-intuitive-layouts-and-a-color-palette-appropriate-for-enterprise-task-management-software-that-maintains-consistency-across-all-modules",
+      "title": "Apply a modern, professional design system throughout the application with a cohesive visual theme featuring clean typography, intuitive layouts, and a color palette appropriate for enterprise task management software that maintains consistency across all modules",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Employee authentication system with secure login",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Dashboard with task summary, notifications, and work status overview",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Task management module - view, update status, add notes, upload images",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Time tracking system with clock in/out and work hour summaries",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Scheduling module with daily/weekly schedule views",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Messaging and notifications system for internal communication",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Employee onboarding module with document upload and progress tracking",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Employee profile management - view personal and job information",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Task Manager Employee App",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,426 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Employee Task Manager Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Implement secure employee authentication with Internet Identity integration and role-based access control",
+      "acceptanceCriteria": [
+        "Employees can log in securely with Internet Identity",
+        "Sessions are maintained with secure tokens",
+        "Unauthorized access to restricted features is prevented"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create login button component using the authorization component's Internet Identity integration. Use the authorization component to handle authentication flow with login/logout functionality and status display. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/auth/ProfileSetupModal.tsx",
+          "operation": "create",
+          "description": "Create modal component for first-time user profile setup using the authorization component's user profile pattern. Collect employee name and email on first login. Use the authorization component's getCallerUserProfile and saveCallerUserProfile methods. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useGetCallerUserProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook for fetching current user profile using the authorization component. Implement proper loading state handling to prevent modal flash on load. Use the authorization component's getCallerUserProfile method with React Query. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/auth/AccessDeniedScreen.tsx",
+          "operation": "create",
+          "description": "Create access denied screen component using the authorization component's access control pattern. Display when unauthorized users attempt to access restricted features. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/AuthGuard.tsx",
+          "operation": "create",
+          "description": "Create authentication guard wrapper component using the authorization component. Protect authenticated routes and redirect to login when not authenticated. Check user profile exists before rendering protected content. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Create employee dashboard displaying task summary, pending tasks count, notifications, and work status overview",
+      "acceptanceCriteria": [
+        "Dashboard shows task summary on load",
+        "Pending tasks are clearly counted and displayed",
+        "Notifications are visible and accessible",
+        "Quick links to main features work correctly"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create main dashboard page component that displays employee work summary. Fetch and display assigned tasks count, pending tasks count using getCountInProgressTasks and getCountCompletedTasks backend methods. Show recent notifications using getNotificationsForEmployee. Include quick navigation cards to Tasks, Time Clock, Schedule, Messages, and Profile sections."
+        },
+        {
+          "path": "frontend/src/components/dashboard/TaskSummaryCard.tsx",
+          "operation": "create",
+          "description": "Create task summary card component displaying total assigned tasks, pending count, in-progress count, and completed count. Use data from getTasksForEmployee backend method filtered by status."
+        },
+        {
+          "path": "frontend/src/components/dashboard/NotificationsList.tsx",
+          "operation": "create",
+          "description": "Create notifications list component displaying recent notifications. Fetch notifications using getNotificationsForEmployee backend method. Show notification content, timestamp, and priority. Include navigation to full notifications view."
+        },
+        {
+          "path": "frontend/src/components/dashboard/QuickNavigation.tsx",
+          "operation": "create",
+          "description": "Create quick navigation component with icon-based cards linking to Tasks, Time Clock, Schedule, Messages, and Profile sections. Include current status indicators where applicable."
+        },
+        {
+          "path": "frontend/src/hooks/useTaskSummary.ts",
+          "operation": "create",
+          "description": "Create custom hook for fetching task summary data including counts by status. Use getTasksForEmployee, getCountInProgressTasks, and getCountCompletedTasks backend methods with React Query for caching."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Build task management module for viewing assigned tasks, updating status, adding notes, and uploading images",
+      "acceptanceCriteria": [
+        "Task list displays all assigned tasks for logged-in employee",
+        "Task detail view shows complete task information",
+        "Status can be changed between the three states",
+        "Notes can be added and saved to tasks",
+        "Images can be uploaded and associated with tasks"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Tasks.tsx",
+          "operation": "create",
+          "description": "Create tasks page displaying list of all assigned tasks for the logged-in employee. Fetch tasks using getTasksForEmployee backend method. Show task title, status badge, and description preview. Include filtering by status (Pending, In Progress, Completed)."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskList.tsx",
+          "operation": "create",
+          "description": "Create task list component rendering individual task items with status indicators. Support click navigation to task detail view. Include visual status badges for Pending, In Progress, and Completed states."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskDetailView.tsx",
+          "operation": "create",
+          "description": "Create task detail view component showing complete task information including title, description, status, assigned employee, notes list, and image gallery. Use getTask backend method for fetching detailed task data."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskStatusSelector.tsx",
+          "operation": "create",
+          "description": "Create status selector component allowing employees to update task status between Pending, In Progress, and Completed. Use updateTaskStatus backend method. Provide visual feedback on status change success."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskNotesSection.tsx",
+          "operation": "create",
+          "description": "Create notes section component displaying existing task notes and providing input to add new notes. Use addTaskNote backend method. Show notes with timestamps in chronological order."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskImageUpload.tsx",
+          "operation": "create",
+          "description": "Create image upload component using the blob-storage component for task-related images. Use ExternalBlob.fromBytes for file upload with progress tracking. Call addTaskImage backend method to associate images with tasks. Display uploaded images in a gallery view. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/tasks/TaskImageGallery.tsx",
+          "operation": "create",
+          "description": "Create image gallery component using the blob-storage component to display task images. Use ExternalBlob.getDirectURL() for rendering images with browser caching and streaming support. Support click to view full-size images. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useTasks.ts",
+          "operation": "create",
+          "description": "Create custom hook for task operations including fetching tasks list, getting task details, updating status, adding notes, and managing images. Use React Query for data fetching and cache management with getTasksForEmployee and getTask backend methods."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement time tracking system with clock in/out functionality, daily hours summary, and weekly overview",
+      "acceptanceCriteria": [
+        "Employees can clock in to start work session",
+        "Employees can clock out to end work session",
+        "Daily hours are calculated and displayed accurately",
+        "Weekly time summary aggregates all work sessions",
+        "All timestamps are recorded with proper timezone handling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/TimeClock.tsx",
+          "operation": "create",
+          "description": "Create time clock page with prominent clock in/out buttons. Display current clock status and today's accumulated hours. Show daily and weekly time summaries. Use clockIn and clockOut backend methods with proper timezone handling."
+        },
+        {
+          "path": "frontend/src/components/timeclock/ClockInOutButton.tsx",
+          "operation": "create",
+          "description": "Create clock in/out button component with visual state indication. Call clockIn or clockOut backend methods based on current state. Show confirmation feedback on successful clock action. Handle timezone conversion for display."
+        },
+        {
+          "path": "frontend/src/components/timeclock/DailyHoursSummary.tsx",
+          "operation": "create",
+          "description": "Create daily hours summary component displaying total hours worked for current day. Fetch work logs using getWorkLogs backend method and calculate daily totals. Show clock in/out timestamps with proper timezone formatting."
+        },
+        {
+          "path": "frontend/src/components/timeclock/WeeklyTimeOverview.tsx",
+          "operation": "create",
+          "description": "Create weekly overview component showing hours worked each day of the current week. Use getWorkLogs backend method and aggregate by date. Display as chart or table with daily breakdowns and weekly total."
+        },
+        {
+          "path": "frontend/src/hooks/useTimeClock.ts",
+          "operation": "create",
+          "description": "Create custom hook for time clock operations including clock in/out actions, fetching work logs, and calculating time summaries. Use clockIn, clockOut, and getWorkLogs backend methods with React Query for state management."
+        },
+        {
+          "path": "frontend/src/utils/timeUtils.ts",
+          "operation": "create",
+          "description": "Create utility functions for time calculations including hours worked calculation from timestamps, timezone conversions, date formatting, and weekly aggregation logic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create scheduling module displaying daily and weekly schedule views with work locations and upcoming tasks",
+      "acceptanceCriteria": [
+        "Daily view shows current day's scheduled items",
+        "Weekly view displays full week schedule",
+        "Work locations are clearly indicated for each schedule item",
+        "Future scheduled tasks are visible and organized"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Schedule.tsx",
+          "operation": "create",
+          "description": "Create schedule page with tabs for daily and weekly views. Display scheduled tasks with timestamps and work locations. Use getTasksForEmployee backend method filtered by date ranges. Include navigation between days and weeks."
+        },
+        {
+          "path": "frontend/src/components/schedule/DailyScheduleView.tsx",
+          "operation": "create",
+          "description": "Create daily schedule view component displaying tasks scheduled for selected day. Show task time, title, location, and status in chronological order. Include date selector to navigate between days."
+        },
+        {
+          "path": "frontend/src/components/schedule/WeeklyScheduleView.tsx",
+          "operation": "create",
+          "description": "Create weekly schedule view component showing seven-day overview with scheduled tasks. Display tasks grouped by day with time slots. Include week navigation controls."
+        },
+        {
+          "path": "frontend/src/components/schedule/ScheduleTaskCard.tsx",
+          "operation": "create",
+          "description": "Create schedule task card component displaying individual scheduled task with time, title, work location, and status indicator. Support click to view task details."
+        },
+        {
+          "path": "frontend/src/hooks/useSchedule.ts",
+          "operation": "create",
+          "description": "Create custom hook for schedule data operations including fetching tasks for date ranges, filtering by day/week, and grouping by date. Use getTasksForEmployee backend method with date filtering logic."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build messaging and notifications system for receiving messages, viewing notifications, and replying",
+      "acceptanceCriteria": [
+        "Employees can view received messages",
+        "Notification list shows all alerts and updates",
+        "Reply functionality works for two-way communication",
+        "Task alerts are triggered and displayed appropriately"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Messages.tsx",
+          "operation": "create",
+          "description": "Create messages page displaying inbox of messages from managers. Show message list with sender, timestamp, and preview. Use getMessagesForEmployee backend method. Include message detail view and reply functionality."
+        },
+        {
+          "path": "frontend/src/components/messages/MessageList.tsx",
+          "operation": "create",
+          "description": "Create message list component displaying received messages with sender name, subject/preview, timestamp, and read status indicator. Support click to open message detail view."
+        },
+        {
+          "path": "frontend/src/components/messages/MessageDetailView.tsx",
+          "operation": "create",
+          "description": "Create message detail view component showing full message content, sender information, timestamp, and related task if applicable. Use getMessage backend method. Include reply button and related task navigation link."
+        },
+        {
+          "path": "frontend/src/components/messages/MessageReplyForm.tsx",
+          "operation": "create",
+          "description": "Create reply form component with text input for composing message replies. Use sendMessage backend method to submit reply. Show confirmation on successful send."
+        },
+        {
+          "path": "frontend/src/components/notifications/NotificationsPanel.tsx",
+          "operation": "create",
+          "description": "Create notifications panel component displaying all notifications with priority badges. Use getNotificationsForEmployee backend method. Show notification content, timestamp, and related task links. Support filtering by priority."
+        },
+        {
+          "path": "frontend/src/components/notifications/TaskAlertBadge.tsx",
+          "operation": "create",
+          "description": "Create task alert badge component for displaying task-related notification indicators. Show count of unread task alerts. Include click to navigate to notifications panel."
+        },
+        {
+          "path": "frontend/src/hooks/useMessages.ts",
+          "operation": "create",
+          "description": "Create custom hook for message operations including fetching messages list, getting message details, and sending replies. Use getMessagesForEmployee, getMessage, and sendMessage backend methods with React Query."
+        },
+        {
+          "path": "frontend/src/hooks/useNotifications.ts",
+          "operation": "create",
+          "description": "Create custom hook for notifications operations including fetching notifications and filtering by priority. Use getNotificationsForEmployee backend method with React Query for real-time updates."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Implement employee onboarding module with personal info submission, form uploads, document uploads, digital signature, and progress tracking",
+      "acceptanceCriteria": [
+        "Personal information form can be filled and submitted",
+        "W-4 and I-9 forms can be uploaded",
+        "ID documents upload with validation",
+        "Digital signature can be captured and saved",
+        "Progress tracker shows completion status of onboarding steps"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Onboarding.tsx",
+          "operation": "create",
+          "description": "Create onboarding page with multi-step form wizard including personal information, employment details, form uploads, ID documents, and digital signature capture. Track completion progress. Use submitOnboardingData and getOnboardingData backend methods."
+        },
+        {
+          "path": "frontend/src/components/onboarding/PersonalInfoForm.tsx",
+          "operation": "create",
+          "description": "Create personal information form component collecting first name, last name, address, and contact details. Include validation for required fields and proper formatting."
+        },
+        {
+          "path": "frontend/src/components/onboarding/EmploymentDetailsForm.tsx",
+          "operation": "create",
+          "description": "Create employment details form component collecting job title, department, and start date. Include date picker for start date selection."
+        },
+        {
+          "path": "frontend/src/components/onboarding/FormsUploadSection.tsx",
+          "operation": "create",
+          "description": "Create forms upload section using the blob-storage component for W-4 and I-9 form uploads. Use ExternalBlob.fromBytes for file upload with progress tracking. Validate file types and sizes. Show upload status and preview. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/onboarding/DocumentUploadSection.tsx",
+          "operation": "create",
+          "description": "Create document upload section using the blob-storage component for identification document uploads. Support multiple ID document types. Use ExternalBlob.fromBytes for file handling. Include file type validation and preview. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/onboarding/DigitalSignatureCapture.tsx",
+          "operation": "create",
+          "description": "Create digital signature capture component with canvas for signature drawing. Convert signature to blob format using the blob-storage component's ExternalBlob.fromBytes. Include clear and confirm actions. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/onboarding/OnboardingProgressTracker.tsx",
+          "operation": "create",
+          "description": "Create progress tracker component showing completion status of onboarding steps. Display step indicators for personal info, employment details, forms, documents, and signature. Use getOnboardingData backend method to fetch current progress."
+        },
+        {
+          "path": "frontend/src/hooks/useOnboarding.ts",
+          "operation": "create",
+          "description": "Create custom hook for onboarding operations including fetching onboarding data, submitting forms, and updating progress. Use submitOnboardingData, getOnboardingData, and updateOnboardingStatus backend methods with React Query."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Create employee profile management section displaying employee information while preventing payroll access",
+      "acceptanceCriteria": [
+        "Profile displays all basic employee information",
+        "Contact details are visible and formatted correctly",
+        "Job title and company assignment are shown",
+        "Payroll data is not accessible or visible to employees"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Profile.tsx",
+          "operation": "create",
+          "description": "Create profile page displaying employee information including name, contact details, job title, company assignment, and role. Use getEmployee backend method. Explicitly exclude any payroll information display or access points."
+        },
+        {
+          "path": "frontend/src/components/profile/ProfileInfoCard.tsx",
+          "operation": "create",
+          "description": "Create profile information card component displaying employee name, email, contact number, and address in a readable format. Show onboarding completion status."
+        },
+        {
+          "path": "frontend/src/components/profile/EmploymentInfoCard.tsx",
+          "operation": "create",
+          "description": "Create employment information card component displaying job title, department, company assignment, role, and start date. Format dates appropriately for display."
+        },
+        {
+          "path": "frontend/src/hooks/useEmployeeProfile.ts",
+          "operation": "create",
+          "description": "Create custom hook for fetching employee profile data. Use getEmployee backend method with React Query. Ensure no payroll data is requested or exposed."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Design responsive PWA interface optimized for mobile with structured navigation including login, dashboard, and main tabs",
+      "acceptanceCriteria": [
+        "Application is fully responsive on mobile devices",
+        "Navigation structure follows the specified flow",
+        "All five main tabs are accessible from navigation",
+        "UI works seamlessly in mobile browsers",
+        "Touch interactions are optimized for mobile use"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Set up main application routing structure with protected routes for Dashboard, Tasks, Time Clock, Schedule, Messages, and Profile pages. Implement AuthGuard wrapper for authenticated routes. Configure public login route. Use React Router for navigation."
+        },
+        {
+          "path": "frontend/src/components/layout/MobileNavigation.tsx",
+          "operation": "create",
+          "description": "Create mobile bottom navigation component with five tabs: Tasks, Time Clock, Schedule, Messages, and Profile. Use icons and labels for each tab. Include active state indicators. Ensure touch-friendly sizing."
+        },
+        {
+          "path": "frontend/src/components/layout/AppLayout.tsx",
+          "operation": "create",
+          "description": "Create main application layout component providing consistent structure across all pages. Include mobile navigation at bottom, logout button in header, and scrollable content area. Apply responsive design patterns."
+        },
+        {
+          "path": "frontend/src/components/layout/Header.tsx",
+          "operation": "create",
+          "description": "Create header component displaying page title and login/logout button. Include notification badge indicator. Ensure mobile-optimized sizing and spacing."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add mobile-first responsive styles including touch-friendly button sizes (minimum 44px touch targets), appropriate spacing, mobile-optimized typography, and viewport configuration. Ensure smooth scrolling and prevent zoom on input focus."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Apply modern professional design system with cohesive visual theme, clean typography, intuitive layouts, and enterprise-appropriate color palette",
+      "acceptanceCriteria": [
+        "Visual design is professional and enterprise-appropriate",
+        "Typography is readable and consistent",
+        "Layout patterns are intuitive and user-friendly",
+        "Color scheme is cohesive across all screens",
+        "Design maintains consistency throughout all features"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define professional design system with CSS custom properties including color palette for primary (blue for actions), secondary (gray for text), success (green for completed), warning (orange for pending), and error (red for alerts) colors. Establish typography scale with readable font sizes, line heights, and font weights. Set consistent spacing scale using rem units."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure Tailwind with enterprise design tokens including brand colors, typography settings, spacing scale, border radius values, and shadow definitions. Extend default theme with professional color palette appropriate for task management. Configure responsive breakpoints for mobile-first design."
+        },
+        {
+          "path": "frontend/src/components/ui/Card.tsx",
+          "operation": "create",
+          "description": "Create reusable card component with consistent shadow, border radius, padding, and background styling. Support variants for default, outlined, and elevated styles."
+        },
+        {
+          "path": "frontend/src/components/ui/Button.tsx",
+          "operation": "create",
+          "description": "Create button component with consistent styling including primary, secondary, and danger variants. Support different sizes (small, medium, large) with appropriate padding and font sizing. Include loading and disabled states."
+        },
+        {
+          "path": "frontend/src/components/ui/Badge.tsx",
+          "operation": "create",
+          "description": "Create badge component for status indicators with color coding for task statuses (pending in orange, in-progress in blue, completed in green) and notification priorities (urgent in red, task-related in blue, general in gray)."
+        }
+      ]
+    }
+  ]
+}

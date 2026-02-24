@@ -1,0 +1,20 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, authentication flow, profile setup modal, and routing to all pages including Dashboard, Tasks, TimeClock, Schedule, Messages, Profile, and Onboarding.",
+  "frontend/src/hooks/useGetCallerUserProfile.ts": "Custom React Query hook for fetching the current user's profile with proper loading state handling to prevent modal flash on initialization.",
+  "frontend/src/hooks/useQueries.ts": "Comprehensive collection of custom React Query hooks for all backend operations including tasks, time tracking, messages, notifications, onboarding, and employee profile management with proper cache invalidation.",
+  "frontend/src/components/auth/ProfileSetupModal.tsx": "Modal dialog component for first-time user profile setup that collects employee name, email, and employee ID on initial login.",
+  "frontend/src/components/layout/AppLayout.tsx": "Main layout wrapper component providing consistent structure with header, scrollable content area, and bottom mobile navigation.",
+  "frontend/src/components/layout/Header.tsx": "Application header component displaying app branding, notification badge with count, and logout button.",
+  "frontend/src/components/layout/MobileNavigation.tsx": "Bottom navigation bar component with six tabs (Home, Tasks, Clock, Schedule, Messages, Profile) optimized for mobile touch interactions.",
+  "frontend/src/pages/LoginPage.tsx": "Login page component with Internet Identity authentication integration and branded card design.",
+  "frontend/src/pages/Dashboard.tsx": "Employee dashboard displaying task summary statistics, recent notifications, and quick navigation cards to all main features.",
+  "frontend/src/components/tasks/TaskDetailDialog.tsx": "Task detail dialog component with status selector, notes section, and image upload/gallery functionality using blob storage.",
+  "frontend/src/pages/Tasks.tsx": "Tasks page with tabbed filtering by status (All, Pending, In Progress, Completed) and task list display with click-to-view details.",
+  "frontend/src/pages/TimeClock.tsx": "Time clock page with clock in/out buttons, real-time clock display, daily and weekly hours summary, and recent work logs list.",
+  "frontend/src/pages/Schedule.tsx": "Schedule page with daily and weekly views showing assigned tasks with dates, locations, and status badges, with explicit Date[] typing for the week array to fix TypeScript inference errors.",
+  "frontend/src/pages/Messages.tsx": "Messages inbox page displaying received messages with reply functionality and message type badges.",
+  "frontend/src/pages/Profile.tsx": "Employee profile page displaying personal information and employment details while explicitly excluding payroll data access.",
+  "frontend/src/pages/Onboarding.tsx": "Multi-step onboarding wizard with personal info form, employment details form, document upload section, and progress tracking.",
+  "frontend/src/index.css": "Global styles with OKLCH-based design system featuring professional blue primary color, mobile-optimized touch targets, and smooth scrolling.",
+  "frontend/tailwind.config.js": "Tailwind configuration with enterprise design tokens, professional color palette, enhanced shadows, and mobile-first responsive settings."
+}
